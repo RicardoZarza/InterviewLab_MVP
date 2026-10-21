@@ -1,10 +1,13 @@
 import express from 'express';
+import cors from 'cors'; // 1. Agregas esta importación
 import { env } from './config/env.js';
 import challengeRoutes from './routes/challengeRoutes.js';
 import sessionRoutes from './routes/sessionRoutes.js';
 
 const app = express();
 app.disable('x-powered-by');
+
+app.use(cors()); // 2. Habilitas CORS para aceptar peticiones desde Vercel
 app.use(express.json({ limit: '1mb' }));
 app.use('/api/challenges', challengeRoutes);
 app.use('/api/sessions', sessionRoutes);
