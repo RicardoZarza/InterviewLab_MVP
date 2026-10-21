@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "acorn": "^8.14.1",
+    "cors": "^2.8.6",
     "express": "^4.21.2"
   },
   "devDependencies": {
