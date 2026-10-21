@@ -34,5 +34,5 @@ app.use((error, _request, response, _next) => {
 });
 
 app.listen(env.port, () => {
-  console.log(`Traza API escuchando en http://localhost:${env.port}/api`);
+  console.log(`[InterviewLab] API escuchando en http://localhost:${env.port}/api`);
 });

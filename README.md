@@ -1,4 +1,4 @@
-# Traza
+# [InterviewLab]
 
 MVP de una plataforma de evaluaciones técnicas. Simula una entrevista de código en vivo:
 

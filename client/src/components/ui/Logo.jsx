@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export const APP_NAME = 'traza';
+export const APP_NAME = '[InterviewLab]';
 
 /** Si recibe `to` funciona como enlace; durante la prueba se usa sin enlace para no salir por error. */
 export default function Logo({ to }) {
