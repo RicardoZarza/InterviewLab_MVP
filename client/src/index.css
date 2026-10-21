@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-chalk antialiased;
+    font-optical-sizing: auto;
+  }
+
+  ::selection {
+    background: rgb(255 178 36 / 0.35);
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.hazard.DEFAULT');
+    outline-offset: 2px;
+  }
+
+  /* Monaco gestiona su propio foco; evitamos el anillo sobre su textarea oculto */
+  .monaco-editor :focus-visible {
+    outline: none !important;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.ink.600') transparent;
+  }
+}
+
+@layer components {
+  /* Único momento animado de la landing: la línea con el bug se marca al cargar */
+  .bug-flag {
+    animation: bug-flag 900ms 500ms ease-out both;
+  }
+
+  @keyframes bug-flag {
+    from {
+      background-color: transparent;
+      box-shadow: inset 3px 0 0 transparent;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

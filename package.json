@@ -1,0 +1,21 @@
+{
+  "name": "traza",
+  "private": true,
+  "version": "0.1.0",
+  "description": "MVP de plataforma de evaluaciones técnicas / entrevistas de código",
+  "scripts": {
+    "install:client": "npm --prefix client install",
+    "install:server": "npm --prefix server install",
+    "install:all": "npm install && npm run install:client && npm run install:server",
+    "dev": "concurrently -n server,client -c cyan,yellow \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "npm --prefix server run dev",
+    "build": "npm --prefix client run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
